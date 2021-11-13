@@ -1,0 +1,8 @@
+
+@use "../abstract/index" as *;
+
+.society {
+    @extend %page;
+    display: flex;
+    align-items: center;
+}
