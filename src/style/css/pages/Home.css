@@ -1,0 +1,64 @@
+.stay-logged-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  height: 100vh;
+  background-color: #001233;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04), transparent);
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  display: grid;
+  flex-direction: column;
+}
+.home > img {
+  object-fit: cover;
+  width: 85%;
+  height: auto;
+  place-self: center;
+  border-radius: 0.75rem;
+  background-color: transparent;
+  box-shadow: 4px 4px 4px black;
+}
+.home button {
+  cursor: pointer;
+  padding: 0;
+}
+.home p {
+  text-align: center;
+  font-style: italic;
+}
+.home p:first-of-type {
+  color: #b3b3b3;
+}
+.home p:nth-of-type(2):hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.stay-logged-in {
+  flex-direction: row;
+}
+.stay-logged-in > .tickbox {
+  background-color: gray;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.4);
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.stay-logged-in > .tickbox > i {
+  color: green;
+  opacity: 0;
+  transition: 150ms;
+  transform: scale(0.5);
+}
+.stay-logged-in > .tickbox-checked > i {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*# sourceMappingURL=Home.css.map */

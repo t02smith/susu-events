@@ -1,0 +1,49 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.login > p {
+  font-family: "Oxygen";
+  font-style: italic;
+  color: #b3b3b3;
+  margin-bottom: 1rem;
+}
+.login > input[type=text],
+.login > input[type=password] {
+  height: 1.5rem;
+  width: 70%;
+  padding: 0.3rem;
+  margin: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  outline: solid 1px transparent;
+  border: none;
+  transition: 250ms;
+}
+.login input[type=text]:focus,
+.login input[type=password]:focus {
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.login > button {
+  margin: 0.25rem 0.5rem;
+  height: 2rem;
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  outline: solid 1px transparent;
+  border: none;
+  transition: 300ms;
+}
+.login button:focus {
+  box-shadow: inset 2px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=Login.css.map */

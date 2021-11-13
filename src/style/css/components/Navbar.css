@@ -1,0 +1,46 @@
+.navbar-main {
+  display: grid;
+  place-items: center;
+}
+
+.navbar > i {
+  color: antiquewhite;
+  background-color: #7C1E1D;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+  font-size: 2rem;
+  border-radius: 50%;
+  position: fixed;
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  padding: 1rem;
+  transition: 250ms;
+  cursor: pointer;
+}
+.navbar > i:active {
+  transform: scale(0.9);
+}
+
+.navbar-main {
+  background-color: #7C1E1D;
+  padding: 0.5rem;
+  z-index: 100;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  right: 0.75rem;
+  top: 50%;
+  transform: translate(150%, -50%);
+  border-radius: 1rem;
+  transition: 200ms;
+}
+.navbar-main > a {
+  color: antiquewhite;
+  font-size: 2rem;
+}
+
+.navbar-open {
+  transform: translate(0, -50%);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4), 0 0 200px #fff;
+}
+
+/*# sourceMappingURL=Navbar.css.map */
