@@ -1,0 +1,59 @@
+
+@use "../abstract/index" as *;
+
+.create-event {
+    @extend %page;
+    display: flex;
+    flex-direction: column;
+    
+
+    > h1 {
+        font-family: "Bebas Neue";
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        background-color: $bg-secondary;
+        height: fit-content;
+        width: fit-content;
+        margin-left: 1rem;
+        padding: 1.2rem .5rem;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+        color: white;
+        animation: slideIn forwards 1s;
+        margin-bottom: 2rem;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        margin: 1rem;
+        width: fit-content;
+
+        p {
+            font-style: italic;
+            color: $bg-secondary;
+            font-size: 1.4rem;
+            
+        }
+
+        select {
+            margin-left: 1rem;
+        }
+
+        > div:first-of-type {
+            background-color: lighten(black, 15%);
+            display: flex;
+            padding: 1rem;
+            border-radius: 25px;
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: none;
+    }
+}

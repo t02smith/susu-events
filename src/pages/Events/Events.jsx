@@ -1,18 +1,27 @@
-import React, {useState} from 'react'
+import React from 'react'
+import {Link} from "react-router-dom"
 
 import Event from "./components/Event"
 
 import "../../style/css/pages/Events.css"
 
+const events = require("../../data/events").default
+
 function Events() {
-    const [openPage, setOpenPage] = useState(false)
 
     return (
         <div className="events">
             <h1>Your Events</h1>
+            <Link to="/create-event"><b>[</b> Create Event <b>]</b></Link>
+            
             <div>
-                <Event onClick = {() => setOpenPage(true)} title="Hackathon" startTime="now" endTime="in 24 hours" location="Zepler"/>
+                {
+                    events &&
+                    events.map((ev,i) => <Event title={ev.title} img={ev.img} startDate={ev.startDate} endDate={ev.endDate} location={ev.location} key={i} id={i}/>)
+                }
+
             </div>
+
             
         </div>
     )

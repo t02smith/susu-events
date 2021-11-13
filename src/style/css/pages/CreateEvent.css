@@ -1,0 +1,56 @@
+.create-event {
+  background-color: #c9cbd1;
+  height: 100vh;
+}
+
+.create-event {
+  display: flex;
+  flex-direction: column;
+}
+.create-event > h1 {
+  font-family: "Bebas Neue";
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f36a5f;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 1rem;
+  padding: 1.2rem 0.5rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  color: white;
+  animation: slideIn forwards 1s;
+  margin-bottom: 2rem;
+}
+.create-event > div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin: 1rem;
+  width: fit-content;
+}
+.create-event > div p {
+  font-style: italic;
+  color: #f36a5f;
+  font-size: 1.4rem;
+}
+.create-event > div select {
+  margin-left: 1rem;
+}
+.create-event > div > div:first-of-type {
+  background-color: #262626;
+  display: flex;
+  padding: 1rem;
+  border-radius: 25px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=CreateEvent.css.map */

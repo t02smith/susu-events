@@ -2,19 +2,21 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite"
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBi3nNSEYrBlA4u56LAbQeIVCQ6CGGa7RM",
-  authDomain: "susu-9b568.firebaseapp.com",
-  projectId: "susu-9b568",
-  storageBucket: "susu-9b568.appspot.com",
-  messagingSenderId: "272073962389",
-  appId: "1:272073962389:web:59c5da613bc6db4adffc9c"
+  apiKey: "AIzaSyAjvYU95Gq0WC9WTUsU92Y4bpa-KiCL57o",
+  authDomain: "susu-events.firebaseapp.com",
+  projectId: "susu-events",
+  storageBucket: "susu-events.appspot.com",
+  messagingSenderId: "1057902566332",
+  appId: "1:1057902566332:web:a73d5f16053334c345e9b9"
 };
 
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
 
-export default db;
+// export default db;

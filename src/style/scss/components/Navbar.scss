@@ -41,10 +41,12 @@
     > a {
         color: antiquewhite;
         font-size: 2rem;
+
     }
 }
 
 .navbar-open {
     transform: translate(0, -50%);
     box-shadow: $box-shadow-out, 0 0 200px #fff;
+
 }

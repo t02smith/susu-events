@@ -1,0 +1,93 @@
+.event-info {
+  height: 100vh;
+  background-color: #c9cbd1;
+  position: relative;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  padding-top: 2rem;
+}
+.event-info > div:first-of-type {
+  place-self: center;
+  border-radius: 20px;
+  border: solid 10px #f36a5f;
+  box-shadow: 4px 4px 4px black;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  animation: logoEnter 2s forwards;
+}
+.event-info > div:first-of-type > img {
+  border-radius: 10px;
+  width: 12rem;
+  height: 12rem;
+  background-color: transparent;
+}
+.event-info > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.event-info h1 {
+  font-family: "Bebas Neue", cursive;
+  place-self: center;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fade forwards 1s 1s;
+}
+.event-info .date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fade forwards 1s 1.5s;
+}
+.event-info .date i {
+  margin: 0.5rem;
+  font-size: 2.2rem;
+}
+.event-info a {
+  margin: 1rem;
+  place-self: center;
+  opacity: 0;
+  animation: fade forwards 1s 1.9s;
+}
+.event-info .description {
+  animation: fade forwards 1s 2.2s;
+  opacity: 0;
+  color: white;
+  width: 90%;
+  height: fit-content;
+  padding: 1rem;
+  margin: 0.4rem;
+  background-color: #262626;
+}
+
+@keyframes fade {
+  from {
+    transform: translateY(-40px);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes logoEnter {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=EventPage.css.map */

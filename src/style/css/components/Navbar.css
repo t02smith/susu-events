@@ -5,7 +5,7 @@
 
 .navbar > i {
   color: antiquewhite;
-  background-color: #7C1E1D;
+  background-color: #f36a5f;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
   font-size: 2rem;
   border-radius: 50%;
@@ -22,7 +22,7 @@
 }
 
 .navbar-main {
-  background-color: #7C1E1D;
+  background-color: #f36a5f;
   padding: 0.5rem;
   z-index: 100;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);

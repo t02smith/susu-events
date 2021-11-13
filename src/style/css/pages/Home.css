@@ -1,3 +1,8 @@
+.home {
+  background-color: #c9cbd1;
+  height: 100vh;
+}
+
 .stay-logged-in {
   display: flex;
   align-items: center;
@@ -5,8 +10,6 @@
 }
 
 .home {
-  height: 100vh;
-  background-color: #001233;
   background-image: radial-gradient(rgba(255, 255, 255, 0.04), transparent);
   color: white;
   font-family: "Courier New", Courier, monospace;
@@ -16,23 +19,35 @@
 }
 .home > img {
   object-fit: cover;
-  width: 85%;
+  width: 65%;
+  opacity: 0;
   height: auto;
   place-self: center;
   border-radius: 0.75rem;
   background-color: transparent;
   box-shadow: 4px 4px 4px black;
+  margin-top: 65px;
+  animation: logoEnter forwards 2s;
+}
+.home > div {
+  opacity: 0;
+  animation: enterBottom forwards 1s 1s;
+}
+.home > div > div {
+  margin-top: 1rem;
 }
 .home button {
+  border: none;
   cursor: pointer;
   padding: 0;
 }
 .home p {
   text-align: center;
   font-style: italic;
+  color: #767676;
 }
 .home p:first-of-type {
-  color: #b3b3b3;
+  color: #f36a5f;
 }
 .home p:nth-of-type(2):hover {
   text-decoration: underline;
@@ -41,9 +56,10 @@
 
 .stay-logged-in {
   flex-direction: row;
+  color: #f36a5f;
 }
 .stay-logged-in > .tickbox {
-  background-color: gray;
+  background-color: #767676;
   padding: 0.25rem;
   border-radius: 0.5rem;
   box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.4);
@@ -51,7 +67,7 @@
   cursor: pointer;
 }
 .stay-logged-in > .tickbox > i {
-  color: green;
+  color: #f36a5f;
   opacity: 0;
   transition: 150ms;
   transform: scale(0.5);
@@ -59,6 +75,32 @@
 .stay-logged-in > .tickbox-checked > i {
   opacity: 1;
   transform: scale(1);
+}
+
+/*ANIMATIONS*/
+@keyframes logoEnter {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes enterBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=Home.css.map */

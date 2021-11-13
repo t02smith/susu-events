@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { GoogleMap, Marker,useJsApiLoader } from '@react-google-maps/api';
 import Geocode from "react-geocode";
 
@@ -7,14 +7,34 @@ const containerStyle = {
   height: '100vh'
 };
 
-const center = {
-  lat: 50.9354262,
-  lng: -1.3951256
-};
+function Tracker({match}) {
+    const [address, setAddress] = useState(match.params.location)
+    const [lngLat, setLngLat] = useState(null)
 
-function Tracker({isLoaded, lngLat}) {
-  
-  
+    const { isLoaded } = useJsApiLoader({
+      id: 'google-map-script',
+      googleMapsApiKey: "AIzaSyAZ48dhgFoe8x0P7ennZ3q2J1NPwXWGra0"
+    })
+
+      Geocode.setApiKey("AIzaSyAZ48dhgFoe8x0P7ennZ3q2J1NPwXWGra0")
+
+    useEffect(() => {
+      Geocode.fromAddress(address).then(
+        (response) => {
+          const { lat, lng } = response.results[0].geometry.location;
+          setLngLat({lat: lat,lng: lng})
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }, [address])
+
+    useEffect(() => {
+      console.log(match.params.location)
+    }, [])
+    
+
     const [map, setMap] = useState(null)
   
     const onLoad = React.useCallback(function callback(map) {
@@ -29,11 +49,11 @@ function Tracker({isLoaded, lngLat}) {
   return isLoaded && lngLat ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
-        zoom={15}
+        center={{lat: lngLat.lat, lng: lngLat.lng}}
+        zoom={18}
         onLoad={onLoad}
         onUnmount={onUnmount}
-        defaultOptions={{fullscreenControl: false}}
+        options={{fullscreenControl: false, streetViewControl: false}}
       >
         {<Marker position={{lat: lngLat.lat, lng: lngLat.lng}} />}
         <></>

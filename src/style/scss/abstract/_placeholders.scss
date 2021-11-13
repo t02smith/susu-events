@@ -1,4 +1,10 @@
 
+@use "./variables" as *;
+
+%page {
+    background-color: $bg-primary;
+    height: 100vh;
+}
 
 %grid-center {
     display: grid;

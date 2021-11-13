@@ -2,8 +2,7 @@
 @use "../../scss/abstract/index" as *;
 
 .home {
-    height: 100vh;
-    background-color: $bg-primary;
+    @extend %page;
     background-image: radial-gradient(hsla(0, 0%, 100%, 0.04), transparent);
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -13,15 +12,28 @@
 
     > img {
         object-fit: cover;
-        width: 85%;
+        width: 65%;
+        opacity: 0;
         height: auto;   
         place-self: center;
         border-radius: .75rem;
         background-color: transparent;
         box-shadow: 4px 4px 4px rgba(0,0,0,1);
+        margin-top: 65px;
+        animation: logoEnter forwards 2s;
+    }
+
+    > div {
+        opacity: 0;
+        animation: enterBottom forwards 1s 1s;
+
+        > div {
+            margin-top: 1rem;
+        }
     }
 
     button {
+        border: none;
         cursor: pointer;
         padding: 0;
     }
@@ -29,12 +41,14 @@
     p {
         text-align: center;
         font-style: italic;
+        color: #767676;
 
         &:first-of-type {
-            color: darken(white, 30%)
+            color: $bg-secondary;
         }
 
         &:nth-of-type(2):hover {
+            
             text-decoration: underline;
             cursor: pointer;
         }
@@ -45,9 +59,10 @@
 .stay-logged-in {
     @extend %flex-center;
     flex-direction: row;
+    color: $bg-secondary;
 
     > .tickbox {
-        background-color: gray;
+        background-color: #767676;
         padding: .25rem;
         border-radius: .5rem;
         box-shadow: inset $box-shadow-out;
@@ -55,7 +70,7 @@
         cursor: pointer;
 
         > i {
-            color: green;
+            color: $bg-secondary;
             opacity: 0;
             transition: 150ms;
             transform: scale(.5);
@@ -63,7 +78,33 @@
     }
 
     > .tickbox-checked > i {
+        
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+/*ANIMATIONS*/
+
+@keyframes logoEnter {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    } 50% {
+        transform: scale(.85);
+        opacity: 1;
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes enterBottom {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

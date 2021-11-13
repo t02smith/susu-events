@@ -3,7 +3,7 @@ import {useJsApiLoader } from '@react-google-maps/api';
 import Geocode from "react-geocode";
 
 function GoogleMapHook() {
-	const [address, setAddress] = useState("Hartley Library B12, University Rd, Highfield, Southampton SO17 1BJ")
+	const [address, setAddress] = useState(null)
 	const [addrLngLat, setAddrLngLat] = useState(null)
 
 	const { isLoaded } = useJsApiLoader({
@@ -31,6 +31,7 @@ function GoogleMapHook() {
 		isLoaded,
 		address,
 		addrLngLat,
+		setAddress
 	}
 }
 
