@@ -48,6 +48,28 @@
             border-radius: 25px;
         }
     }
+
+    .open-calendar {
+        color: black;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .react-calendar {
+        position: absolute;
+        z-index: -1;
+        width: 90%;
+        transition: 150ms;
+        transform: scale(.9);
+    }
+
+    .calendar-open {
+        z-index: 50;
+        transform: none;
+    }
 }
 
 @keyframes slideIn {

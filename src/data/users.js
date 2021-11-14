@@ -3,7 +3,7 @@ const users = {
     a: {
         username: "tom",
         passwordHash: "",
-        societies: ["a"],
+        societies: ["a","b","c"],
         adminFor: ["hello"]
     }
 }

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/components/SocietyCard.scss"],"names":[],"mappings":"AAGA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;;AAKJ;EACI;EACA;EACA;EACA;EACA;;AAIJ;EACI;;AAGJ;EACI","file":"SocietyCard.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/components/SocietyCard.scss"],"names":[],"mappings":"AAGA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAIJ;EACI;;;AAKR;EACI;IACI;IACA;;EACF;IACE;IACA","file":"SocietyCard.css"}

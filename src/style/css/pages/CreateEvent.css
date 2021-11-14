@@ -43,6 +43,24 @@
   padding: 1rem;
   border-radius: 25px;
 }
+.create-event .open-calendar {
+  color: black;
+  cursor: pointer;
+}
+.create-event .open-calendar:hover {
+  text-decoration: underline;
+}
+.create-event .react-calendar {
+  position: absolute;
+  z-index: -1;
+  width: 90%;
+  transition: 150ms;
+  transform: scale(0.9);
+}
+.create-event .calendar-open {
+  z-index: 50;
+  transform: none;
+}
 
 @keyframes slideIn {
   from {

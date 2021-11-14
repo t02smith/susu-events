@@ -3,9 +3,69 @@
   height: 100vh;
 }
 
+.society > div:first-of-type {
+  place-self: center;
+  border-radius: 20px;
+  border: solid 10px #f36a5f;
+  box-shadow: 4px 4px 4px black;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  animation: logoEnter 2s forwards;
+}
+.society > div:first-of-type > img {
+  border-radius: 10px;
+  width: 12rem;
+  height: 12rem;
+  background-color: white;
+}
+
 .society {
   display: flex;
+  padding-top: 4rem;
+  flex-direction: column;
   align-items: center;
+}
+.society h1 {
+  margin: 0.75rem;
+  opacity: 0;
+  animation: fade forwards 1s 1s;
+}
+.society h2 {
+  margin-top: 3rem;
+}
+.society .socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.society .socials i {
+  opacity: 0;
+  animation: socialIcons forwards 1s 1s;
+  margin: 0 0.5rem;
+  font-size: 2rem;
+}
+
+@keyframes socialIcons {
+  from {
+    opacity: 0;
+    margin: 0;
+  }
+  to {
+    opacity: 1;
+    margin: 0 0.5rem;
+  }
+}
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #26a7de;
+}
+
+.fa-laptop {
+  color: #c41c0f;
 }
 
 /*# sourceMappingURL=Society.css.map */

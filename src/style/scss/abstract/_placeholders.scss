@@ -16,3 +16,22 @@
     align-items: center;
     justify-content: center;
 }
+
+%logoImg {
+    place-self: center;
+    border-radius: 20px;
+    border: solid 10px $bg-secondary;
+    box-shadow: 4px 4px 4px rgba(0,0,0,1);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    animation: logoEnter 2s forwards;
+
+    > img {
+        border-radius: 10px;
+        width: 12rem;
+        height: 12rem;   
+        background-color: white;;
+        
+    }
+}

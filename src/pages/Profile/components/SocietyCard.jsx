@@ -9,10 +9,6 @@ function SocietyCard({ title, img, id}) {
     return (
         <Link to={`/societies/${id}`} className="society-card">
             <img alt="logo" src={img} />
-            <div>
-                <h3>{title}</h3>
-            </div>
-            
         </Link>
     )
 }
