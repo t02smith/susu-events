@@ -8,12 +8,11 @@ import LoginField from '../Home/components/LoginField'
 
 import 'react-calendar/dist/Calendar.css';
 
-const societies = require("../../data/societies.js").default;
 
-function CreateEvent() {
+function CreateEvent({ createEvent, avSocs, getSociety }) {
 
-    const [avSocs, setAvSocs] = useState(["a", "b"]);
     const [soc, setSoc] = useState();
+    const [socNames, setSocNames] = useState();
     const [socListOpen, setSocListOpen] = useState(false);
 
     const [evName, setEvName] = useState("");
@@ -26,19 +25,45 @@ function CreateEvent() {
     const [end, setEnd] = useState(new Date());
     const [changingStart, setChangingStart] = useState(true);
 
-    const getSoc = (socName) => {
-        for (let s in avSocs) {
-            if (societies[avSocs[s]].name === socName) return societies[avSocs[s]]
+    const getSoc = async (socName) => {
+        for (let i in avSocs) {
+            const soc = await getSociety(avSocs[i]);
+            if (soc.name === socName) return soc;
         }
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!soc || !evName || !location) return;
+
+        await createEvent(evName, soc.icon ,location, soc.id ,start.toDateString(), end.toDateString())
+    }
+
+    const updateSoc = async (name) => {
+        const soc = await getSoc(name);
+        setSoc(soc);
+    }
+
+    const getSocNames = async () => {
+        let arr = [];
+        for (let soc in avSocs) {
+            let s = await getSociety(avSocs[soc]);
+            arr.push(s.name);
+        }
+
+        setSocNames(arr);
+    }
+
+    useEffect(() => {
+        getSocNames()
+
+        // eslint-disable-next-line
+    }, [])
+
     useEffect(() => {
         console.log(soc)
-    }, [soc])
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
+    },[soc])
 
     useEffect(() => {
         if (changingStart) setStart(value);
@@ -47,10 +72,11 @@ function CreateEvent() {
         // eslint-disable-next-line
     }, [value])
 
+
     return (
         <>
             <Overlay open={calendarOpen} close={() => setCalendarOpen(false)}/>
-            <ListPopup data={avSocs.map(s => societies[s].name)} select={(s) => setSoc(getSoc(s))} open={socListOpen} close={() => setSocListOpen(false)}/>
+            <ListPopup data={socNames} select={(s) => updateSoc(s)} open={socListOpen} close={() => setSocListOpen(false)}/>
             <form className="create-event" onSubmit={handleSubmit}>
                 <h1>Your event</h1>
                 <div>
@@ -58,7 +84,7 @@ function CreateEvent() {
                     {
                         soc ?
                         <div className="soc-logo" >
-                            <img src={soc.logo} alt="" />
+                            <img src={soc.icon} alt="" />
                         </div> :
                         <p>Select Society</p>
                     }
@@ -70,11 +96,11 @@ function CreateEvent() {
                
                         <div className="calendars">
                             <div>
-                                <div className="open-calendar" onClick={() => {setCalendarOpen(true);setChangingStart(true);}}><i class="far fa-calendar"></i></div>
+                                <div className="open-calendar" onClick={() => {setCalendarOpen(true);setChangingStart(true);}}><i className="far fa-calendar"></i></div>
                                 <p>START</p>
                             </div>
                             <div>
-                                <div className="open-calendar" onClick={() => {setCalendarOpen(true);setChangingStart(false);}}><i class="far fa-calendar-times"></i></div>
+                                <div className="open-calendar" onClick={() => {setCalendarOpen(true);setChangingStart(false);}}><i className="far fa-calendar-times"></i></div>
                                 <p>FINISH</p>
                             </div>
                         </div>
@@ -90,7 +116,9 @@ function CreateEvent() {
                         />
                     </div>
 
+
                     <button type="submit">Create!</button>
+                    
 
                 </div>
                 

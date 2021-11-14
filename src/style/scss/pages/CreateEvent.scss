@@ -51,7 +51,7 @@
             margin-left: 1rem;
         }
 
-        > button {
+        > a > button {
             font-family: montserrat;
             background-color: $bg-secondary;
             width: 141px;
@@ -61,6 +61,12 @@
             margin-top: 20px;
             box-shadow: 0 4px 4px rgba(0,0,0,0.25);
             border: none;
+            cursor: pointer;
+            transition: 150ms;
+
+            &:active {
+                transform: scale(.97);
+            }
         }
     }
 

@@ -70,6 +70,11 @@
   margin-top: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
+  cursor: pointer;
+  transition: 150ms;
+}
+.create-event > div > button:active {
+  transform: scale(0.97);
 }
 .create-event .soc-select {
   width: 14rem;

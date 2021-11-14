@@ -10,7 +10,7 @@
     font-family: montserrat;
 
     >div:first-of-type {
-        @extend %logoImg;
+        @include logo(true);
     }
 
     h1 {

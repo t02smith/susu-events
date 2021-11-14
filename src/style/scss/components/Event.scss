@@ -12,6 +12,8 @@
     grid-template-columns: 1fr 3fr;
     gap: 1rem;
     text-decoration: none;
+    opacity: 0;
+    animation: cardSlideDown forwards 1s 1s;
 
     > img {
         width: 5rem;
@@ -40,3 +42,12 @@
     }
 }
 
+@keyframes cardSlideDown {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    } to {
+        transform: none;
+        opacity: 1;
+    }
+}

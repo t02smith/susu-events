@@ -15,6 +15,7 @@
   border-radius: 0 0 1rem 1rem;
   background-color: #f36a5f;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+  animation: slideIn forwards 1s;
 }
 .events > a {
   place-self: center;
@@ -29,6 +30,8 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: 150ms;
+  opacity: 0;
+  animation: growIn forwards 1s 0.5s;
 }
 .events > a b {
   color: black;
@@ -39,6 +42,29 @@
 .events .event-list {
   opacity: 0;
   animation: fade forwards 1s 1s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes growIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /*# sourceMappingURL=Events.css.map */

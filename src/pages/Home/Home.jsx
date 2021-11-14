@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Overlay from '../../components/Overlay';
+import React from 'react'
 
 import "../../style/css/pages/Home.css"
 import Login from "./components/Login.jsx"
@@ -8,9 +7,6 @@ import Login from "./components/Login.jsx"
 
 function Home({ login }) {
     
-    const [registerOpen, setRegisterOpen] = useState(false);
-    
-
     return (
         <div className="home">
             <img src="/img/logo.png" alt="" />
@@ -19,7 +15,7 @@ function Home({ login }) {
 
                 <div>
                     <p>Not a current user?</p>
-                    <p onClick={() => setRegisterOpen(true)}>Register Now</p>
+                    <p>Register Now</p>
                 </div>
             </div>
         </div>

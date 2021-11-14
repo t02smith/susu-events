@@ -10,7 +10,7 @@
 
 
     > div:first-of-type {
-        @extend %logoImg;
+        @include logo(true);
     }
 
     > div:nth-of-type(2) {

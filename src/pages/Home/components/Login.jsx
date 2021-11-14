@@ -14,7 +14,12 @@ function Login({login}) {
         e.preventDefault();
         if (!username || !password) return;
 
-        await login(username,password, stayLoggedIn);
+        const res = await login(username,password, stayLoggedIn);
+        if (res) {
+            setUsername("");
+        }
+        
+        setPassword("");
     }
     
     return (

@@ -8,6 +8,8 @@ const containerStyle = {
 };
 
 function Tracker({match}) {
+
+    // eslint-disable-next-line
     const [address, setAddress] = useState(match.params.location)
     const [lngLat, setLngLat] = useState(null)
 
@@ -30,14 +32,11 @@ function Tracker({match}) {
       );
     }, [address])
 
-    useEffect(() => {
-      console.log(match.params.location)
-    }, [])
-    
-
+   // eslint-disable-next-line
     const [map, setMap] = useState(null)
   
     const onLoad = React.useCallback(function callback(map) {
+        // eslint-disable-next-line
         const bounds = new window.google.maps.LatLngBounds();
         setMap(map)
     }, [])

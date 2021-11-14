@@ -21,6 +21,10 @@
   grid-template-rows: 2fr 3fr;
   padding-top: 2rem;
 }
+.event-info > div:first-of-type {
+  opacity: 0;
+  animation: logoEnter 2s forwards;
+}
 .event-info > div:nth-of-type(2) {
   display: flex;
   flex-direction: column;

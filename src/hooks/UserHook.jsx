@@ -1,109 +1,101 @@
 import { useEffect, useState } from 'react'
-// import { doc, getDoc } from 'firebase/firestore/lite';
+import { doc, getDoc } from 'firebase/firestore/lite';
 
-// import db from '../firebase';
-
-import users from "../data/users.js"
+import db from '../firebase';
 
 const crypto = require("crypto");
 const shasum = crypto.createHash("sha256")
 
 function UserHook() {
-    const [user,setUser] = useState(users.a);
-    const [loggedIn, setLoggedIn] = useState(true);
+    const [user,setUser] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false);
     
-    // useEffect(() => {
-    //     const username = localStorage.getItem("username");
-    //     const token = localStorage.getItem("token");
-    //     if (username && token) {;
-    //         const tokenLogin = async () => await loginViaToken(JSON.parse(username), JSON.parse(token));
-    //         tokenLogin();
-    //     }
+    useEffect(() => {
+        const username = localStorage.getItem("username");
+        const token = localStorage.getItem("token");
+        if (username && token) {
 
-    //     // eslint-disable-next-line
-    // })
+            const tokenLogin = async () => await loginViaToken(JSON.parse(username), JSON.parse(token));
+            tokenLogin();
+        }
+
+        // eslint-disable-next-line
+    }, [])
 
     useEffect(() => {
         setLoggedIn(user ? true: false);
     }, [user])
 
-    const login = (username, password, stayLoggedIn) => {
+
+    const login = async (username, password, stayLoggedIn) => {
         const hash = shasum.update(password).digest('hex');
-        const usr = getUser(username);
-    }
+        const usr = await getUser(username);
 
-    const getUser = (username) => {
+        if (!usr) return false;
 
-    }
+        if (usr.passwordHash === hash) {
+            updateUserState(usr);
+            setLoggedIn(true);
 
-    // const login = async (username, password, stayLoggedIn=false) => {
-    //     const hash = shasum.update(password).digest('hex');
-    //     const usr = await getUser(username);
-
-    //     if (!usr) return false;
-
-    //     if (usr.passwordHash === hash) {
-    //         updateUserState(usr);
-    //         setLoggedIn(true);
-
-    //         if (stayLoggedIn) {
-    //             localStorage.setItem("username", JSON.stringify(usr.username));
-    //             localStorage.setItem("token", JSON.stringify(usr.token));
-    //         }
+            if (stayLoggedIn) {
+                localStorage.setItem("username", JSON.stringify(usr.username));
+                localStorage.setItem("token", JSON.stringify(usr.token));
+            }
             
-    //         return true;
-    //     } 
+            return true;
+        } 
 
-    //     return false;
-    // }
-
-    const logout = async () => {
-        setLoggedIn(false);
-        setUser({});
+        return false;
     }
 
-    // const loginViaToken = async (username, token) => {
-    //     const usr = await getUser(username);
+    const logout = () => {
+        setLoggedIn(false);
+        setUser(null);
+        localStorage.clear();
+    }
 
-    //     if (token === usr.token) {
-    //         updateUserState(usr)
-    //         setLoggedIn(true);
-    //     }
-    // }
+    const loginViaToken = async (username, token) => {
+        const usr = await getUser(username);
 
-    // const getUser = async(username) => {
-    //     const id = await getId(username);
-    //     const usr = await getUserById(id);
-    //     return usr;
-    // }
+        if (token === usr.token) {
+            updateUserState(usr)
+            setLoggedIn(true);
+        }
+    }
 
-    // const getId = async (username) => {
-    //     const configRef = doc(db, "users", "config");
-    //     const configSnap = await getDoc(configRef);
+    const getUser = async(username) => {
+        const id = await getId(username);
+        const usr = await getUserById(id);
+        return usr;
+    }
 
-    //     if (configSnap.exists()) {
-    //         const data = configSnap.data().usernameToId;
+    const getId = async (username) => {
+        const configRef = doc(db, "users", "config");
+        const configSnap = await getDoc(configRef);
 
-    //         for (let usr in data) {
-    //             if (data[usr].username === username) return data[usr].id;
-    //         }
-    //     }
+        if (configSnap.exists()) {
+            const data = configSnap.data().usernameToId;
 
-    //     return null;
-    // }
+            for (let usr in data) {
+                if (data[usr].username === username) return data[usr].id;
+            }
+        }
+
+        return null;
+    }
 
 
-    // const getUserById = async (id) => {
-    //     const usrRef = doc(db, "users", `${id}`);
-    //     const usrSnap = await getDoc(usrRef);
-    //     if (usrSnap.exists()) {
-    //         return usrSnap.data()
-    //     }
-    // }
+    const getUserById = async (id) => {
+        const usrRef = doc(db, "users", `${id}`);
+        const usrSnap = await getDoc(usrRef);
+        if (usrSnap.exists()) {
+            return usrSnap.data()
+        }
+    }
 
-    // const updateUserState = (usr) => {
-    //     setUser({...usr, id: getId(usr.username)})
-    // }
+    const updateUserState = (usr) => {
+        setUser({...usr, id: getId(usr.username)})
+    }
 
     return {
         user,

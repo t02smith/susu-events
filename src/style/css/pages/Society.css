@@ -25,6 +25,10 @@
   align-items: center;
   font-family: montserrat;
 }
+.society > div:first-of-type {
+  opacity: 0;
+  animation: logoEnter 2s forwards;
+}
 .society h1 {
   margin: 0.75rem;
   opacity: 0;
