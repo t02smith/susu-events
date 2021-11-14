@@ -17,4 +17,18 @@
   position: relative;
 }
 
+@media (min-width: 500px) {
+  .app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b3b6be;
+    height: 100vh;
+  }
+  .app-container > .app {
+    min-width: 500px;
+    border-radius: 0.75rem;
+  }
+}
+
 /*# sourceMappingURL=App.css.map */
