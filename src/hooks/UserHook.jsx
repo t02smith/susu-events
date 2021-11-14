@@ -4,7 +4,6 @@ import { doc, getDoc } from 'firebase/firestore/lite';
 import db from '../firebase';
 
 const crypto = require("crypto");
-const shasum = crypto.createHash("sha256")
 
 function UserHook() {
     const [user,setUser] = useState(null);
@@ -28,12 +27,13 @@ function UserHook() {
 
 
     const login = async (username, password, stayLoggedIn) => {
-        const hash = shasum.update(password).digest('hex');
+        const hash = crypto.createHash("sha256").update(password).digest('hex');
         const usr = await getUser(username);
 
         if (!usr) return false;
 
         if (usr.passwordHash === hash) {
+
             updateUserState(usr);
             setLoggedIn(true);
 

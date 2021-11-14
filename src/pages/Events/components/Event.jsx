@@ -7,7 +7,7 @@ import "../../../style/css/components/Event.css"
 
 function Event({ title, img, startDate, endDate, location, id }) {
     return (
-        <Link className="event" to={`/events/${id}`} >
+        <Link className="event" to={`/susu-events/events/${id}`} >
             <img alt="logo" src={img} />
             <div>
                 <h3>{title}</h3>

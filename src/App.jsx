@@ -15,6 +15,7 @@ import Society from "./pages/Society/Society";
 import UserHook from './hooks/UserHook';
 import SocietyHook from './hooks/SocietyHook';
 import EventHook from './hooks/EventHook';
+import Footer from './components/Footer';
 
 function App() {
     const gmHook = GoogleMapHook();
@@ -31,22 +32,22 @@ function App() {
                     <Router>
                         <Navbar logout={userHook.logout}/>
 
-                        <Route exact path="/events">
+                        <Route exact path="/susu-events/events">
                             <Events avSocs={userHook.user.societies} adminOf={userHook.user.adminOf} getSocEvents={socHook.getSocEvents}/>
                         </Route>  
-                        <Route exact path="/tracker">
+                        <Route exact path="/susu-events/tracker">
                             <Tracker isLoaded={gmHook.isLoaded} address={gmHook.address} lngLat={gmHook.addrLngLat}/>
                         </Route>
-                        <Route exact path="/events/:id" component={EventPage} />
-                        <Route exact path="/tracker/:location" component={Tracker} />
+                        <Route exact path="/susu-events/events/:id" component={EventPage} />
+                        <Route exact path="/susu-events/tracker/:location" component={Tracker} />
                         
-                        <Route exact path="/create-event">
+                        <Route exact path="/susu-events/create-event">
                             <CreateEvent createEvent={eventHook.createEvent} avSocs={userHook.user.adminOf} getSociety={socHook.getSociety}/>
                         </Route>
-                        <Route exact path="/">
+                        <Route exact path="/susu-events/">
                             <Profile name={userHook.user.username} societies={userHook.user.societies} getSociety={socHook.getSociety}/>
                         </Route>
-                        <Route exact path="/societies/:id" component={Society}>
+                        <Route exact path="/susu-events/societies/:id" component={Society}>
                             <Society getSociety={socHook.getSociety} getSocEvents={socHook.getSocEvents} />
                         </Route>
                     </Router>
@@ -54,6 +55,7 @@ function App() {
                     <Home login={userHook.login}/>
                 }
             </div>
+            <Footer />
         </div>
        
     )

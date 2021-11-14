@@ -17,15 +17,15 @@ function Navbar({ logout }) {
                 <i onClick={() => setOpen(!open)} className="fas fa-bars"></i>
                 <div className={`navbar-main ${open && "navbar-open"}`}>
 
-                    <Link to="/" onClick={close}>
+                    <Link to="/susu-events/" onClick={close}>
                         <i className="fas fa-user"></i>
                     </Link>
 
-                    <Link to="/events" onClick={close}>
+                    <Link to="/susu-events/events" onClick={close}>
                         <i className="far fa-calendar"></i>
                     </Link>
                     
-                    <Link to="/" onClick={() => {close(); logout();}}>
+                    <Link to="/susu-events/" onClick={() => {close(); logout();}}>
                         <i className="fas fa-sign-out-alt"></i>
                     </Link>
                     

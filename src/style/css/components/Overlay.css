@@ -4,7 +4,6 @@
   width: 100vw;
   z-index: -1;
   background-color: transparent;
-  -webkit-transition: 150ms;
   transition: 150ms;
 }
 
@@ -12,7 +11,5 @@
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 50;
 }
-
-/*# sourceMappingURL=Overlay.css.map */
 
 /*# sourceMappingURL=Overlay.css.map */

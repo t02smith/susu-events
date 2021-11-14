@@ -27,7 +27,7 @@ function Profile({ name, societies, getSociety }) {
 	return (
 		<div className="userInfo">
 			<div>
-				<img src='/img/userIcon.jpg' alt=""/>
+				<img src={process.env.PUBLIC_URL + '/img/userIcon.jpg'} alt=""/>
 				<h1>{name}</h1>
 			</div>
 

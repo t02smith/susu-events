@@ -9,7 +9,7 @@ function Home({ login }) {
     
     return (
         <div className="home">
-            <img src="/img/logo.png" alt="" />
+            <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" />
             <div>
                 <Login login={login}/>
 

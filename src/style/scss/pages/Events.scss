@@ -2,8 +2,7 @@
 @use "../abstract/index" as *;
 
 .events {
-    height: 100vh;
-    background-color: $bg-primary;
+    max-height: 100vh;
     display: grid;
     grid-template-rows: 1fr 1fr 10fr;
 
@@ -49,6 +48,7 @@
     .event-list {
         opacity: 0 ;
         animation: fade forwards 1s 1s;
+        height: fit-content;
     }
 
 }

@@ -32,19 +32,17 @@ function Events({ avSocs, adminOf, getSocEvents }) {
             {adminOf.length > 0 &&
                 <>
                     <h1>Your Events</h1>
-                    <Link to="/create-event"><b>[</b> Create Event <b>]</b></Link>
+                    <Link to="/susu-events/create-event"><b>[</b> Create Event <b>]</b></Link>
                 </>
             }
             
-            <div>
+            <div className="event-list">
                 {
                     events &&
                     events.map((ev,i) => <Event title={ev.name} img={ev.img} startDate={ev.startDate} endDate={ev.endDate} location={ev.location} key={i} id={i}/>)
                 }
 
             </div>
-
-            
         </div>
     )
 }

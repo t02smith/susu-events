@@ -17,7 +17,6 @@ function SocietyHook() {
     const getSociety = async (id) => {
         const cache = isCached(id);
         if (cache) {
-            console.log("boom")
             return cache;
         }
 

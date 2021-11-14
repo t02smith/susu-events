@@ -2,7 +2,7 @@
 @use "../../scss/abstract/index" as *;
 
 .home {
-    @extend %page;
+    
     background-image: radial-gradient(hsla(0, 0%, 100%, 0.04), transparent);
     color: white;
     font-family: montserrat;

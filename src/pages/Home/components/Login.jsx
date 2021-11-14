@@ -12,9 +12,12 @@ function Login({login}) {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!username || !password) return;
+        const usrname = username.trim();
+        const passwd = password.trim();
 
-        const res = await login(username,password, stayLoggedIn);
+        if (!usrname || !passwd) return;
+
+        const res = await login(usrname,passwd, stayLoggedIn);
         if (res) {
             setUsername("");
         }
@@ -27,7 +30,6 @@ function Login({login}) {
 
             <LoginField type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="USERNAME" icon="fas fa-user"/>
             <LoginField type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="PASSWORD" icon="fas fa-lock"/>
-
 
             <button type="submit">Login</button>
             <div className="stay-logged-in">

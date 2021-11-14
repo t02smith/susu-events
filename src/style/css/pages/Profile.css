@@ -1,9 +1,5 @@
 .userInfo {
-  background-color: #c9cbd1;
-  height: 100vh;
-}
-
-.userInfo {
+  max-height: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
