@@ -1,0 +1,12 @@
+
+@use "./variables" as *;
+@use "./placeholders" as *;
+
+@mixin logo($animate) {
+    @extend %logoImg;
+
+    @if $animate {
+        opacity: 0;
+        animation: logoEnter 2s forwards;
+    }
+}

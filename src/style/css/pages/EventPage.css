@@ -1,12 +1,10 @@
 .event-info > div:first-of-type {
   place-self: center;
   border-radius: 20px;
-  border: solid 10px #f36a5f;
+  border: solid 0.7rem #f36a5f;
   box-shadow: 4px 4px 4px black;
   display: grid;
   place-items: center;
-  opacity: 0;
-  animation: logoEnter 2s forwards;
 }
 .event-info > div:first-of-type > img {
   border-radius: 10px;

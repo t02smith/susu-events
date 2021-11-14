@@ -1,0 +1,41 @@
+.list-popup {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.75);
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  list-style: none;
+  transition: 150ms;
+  background-color: #262626;
+  color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.list-popup > li {
+  border-bottom: solid 1px #ffffff79;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 250ms;
+}
+.list-popup > li:active {
+  background-color: #4d4d4d;
+}
+.list-popup > li:first-of-type {
+  border-radius: 20px 20px 0 0;
+}
+.list-popup > li:last-of-type {
+  border: none;
+  border-radius: 0 0 20px 20px;
+}
+
+.list-popup-open {
+  z-index: 50;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=ListPopup.css.map */

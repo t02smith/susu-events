@@ -7,6 +7,7 @@ const events = [
         startDate: "11:00 13th Nov",
         endDate: "13:30 14th Nov",
         location: "New Zepler Southampton",
+        soc: "a"
     },
     {
         title: "ECSS Pub Crawl",
@@ -14,6 +15,7 @@ const events = [
         startDate: "20:00 15th Nov",
         endDate: "00:00 16th Nov",
         location: "The Hobbit Southampton",
+        soc: "b"
     }
 ]
 
