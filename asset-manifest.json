@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/susu-events/static/css/main.b6ab8b44.chunk.css",
+    "main.js": "/susu-events/static/js/main.7fbe2311.chunk.js",
+    "main.js.map": "/susu-events/static/js/main.7fbe2311.chunk.js.map",
+    "runtime-main.js": "/susu-events/static/js/runtime-main.a80999fe.js",
+    "runtime-main.js.map": "/susu-events/static/js/runtime-main.a80999fe.js.map",
+    "static/css/2.f10f449b.chunk.css": "/susu-events/static/css/2.f10f449b.chunk.css",
+    "static/js/2.506f6e63.chunk.js": "/susu-events/static/js/2.506f6e63.chunk.js",
+    "static/js/2.506f6e63.chunk.js.map": "/susu-events/static/js/2.506f6e63.chunk.js.map",
+    "index.html": "/susu-events/index.html",
+    "static/css/2.f10f449b.chunk.css.map": "/susu-events/static/css/2.f10f449b.chunk.css.map",
+    "static/css/main.b6ab8b44.chunk.css.map": "/susu-events/static/css/main.b6ab8b44.chunk.css.map",
+    "static/js/2.506f6e63.chunk.js.LICENSE.txt": "/susu-events/static/js/2.506f6e63.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a80999fe.js",
+    "static/css/2.f10f449b.chunk.css",
+    "static/js/2.506f6e63.chunk.js",
+    "static/css/main.b6ab8b44.chunk.css",
+    "static/js/main.7fbe2311.chunk.js"
+  ]
+}
