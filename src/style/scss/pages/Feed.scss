@@ -1,0 +1,15 @@
+
+@use "../abstract/index" as *;
+
+.feed {
+    margin: 2rem;
+
+    > h1 {
+        font-size: 4rem;
+    }
+}
+
+.feed-items {
+    margin: 2rem;
+
+}

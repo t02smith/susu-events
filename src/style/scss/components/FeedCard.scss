@@ -1,0 +1,39 @@
+
+@use "../abstract/index" as *;
+
+.feed-card {
+    display: flex;
+    align-items: center;
+    background-color: lighten(black, 17%);
+    width: 40%;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.4);
+    margin-bottom: 1.25rem;
+
+    > img {
+        object-fit: cover;
+        width: 200px;
+        height: auto;
+        margin-right: 2rem;
+        background-color: $bg-secondary;
+        border-radius: 20px;
+        padding: .5rem;
+    }
+}
+
+.feed-card-content {
+    color: white;
+
+    > h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-family: montserrat;
+    }
+
+    > h3 {
+        font-style: italic;
+        color: darken(white, 40%);
+        font-size: 1rem;
+        margin-bottom: .5rem;
+    }
+}
