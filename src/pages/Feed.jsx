@@ -2,14 +2,14 @@ import React from 'react'
 import FeedCard from '../components/FeedCard'
 
 import "../style/css/pages/Feed.css"
+import Page from './Page'
 
 const feed = require("../data/feed").default
 const societies = require("../data/societies").default
 
 function Feed() {
     return (
-        <div className="feed">
-            <h1><b>My</b> Feed</h1>
+        <Page title={"My Events"} className="feed">
             <div className="feed-items">
                 {
                     feed &&
@@ -20,7 +20,7 @@ function Feed() {
                     />)
                 }
             </div>
-        </div>
+        </Page>
     )
 }
 

@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 import "../style/css/components/SocietyCard.css"
 
-function SocietyCard({ logo }) {
+function SocietyCard({ logo, id }) {
     return (
-        <div className="soc-card">
+        <Link to={`societies/${id}`} className="soc-card">
             <img alt="" src={logo} />
-        </div>
+        </Link>
     )
 }
 

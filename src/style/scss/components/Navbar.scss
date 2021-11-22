@@ -1,28 +1,8 @@
 
 @use "../abstract/index" as *;
 
-.navbar > i{
-    color: antiquewhite;
-    background-color: $bg-secondary;
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.8);
-    font-size: 2rem;
-    border-radius: 50%;
 
-    position: fixed;
-    right: .75rem;
-    top: .75rem;
-    z-index: 100;
-    padding: 1rem;
-    
-    transition: 250ms;
-    cursor: pointer;
-
-    &:active {
-        transform: scale(.9);
-    }
-}
-
-.navbar-main {
+.navbar {
     display: grid;
     place-items: center;
     background-color: $bg-secondary;
@@ -60,5 +40,15 @@
 
     .navbar-main > a {
         font-size: 4rem;
+    }
+
+    .mob-only{
+        display: none;
+    } 
+}
+
+@media (max-width: $breakpoint-desktop) {
+    .mob-only {
+        display: block;
     }
 }

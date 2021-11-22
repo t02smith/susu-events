@@ -9,7 +9,6 @@ function Overlay({open, close}) {
             onClick={close} 
             className={`overlay ${open && "overlay-open"}`}
         >
-            
         </div>
 
     )

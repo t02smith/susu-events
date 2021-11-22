@@ -3,37 +3,89 @@
 
 .feed-card {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     background-color: lighten(black, 17%);
-    width: 40%;
-    border-radius: 20px;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.4);
-    margin-bottom: 1.25rem;
+    width: 95%;
+    padding: 1rem;
+    margin: .3rem 0rem;
+    text-decoration: none;
 
-    > img {
-        object-fit: cover;
-        width: 200px;
-        height: auto;
-        margin-right: 2rem;
-        background-color: $bg-secondary;
-        border-radius: 20px;
-        padding: .5rem;
+    .feed-card-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        > img {
+            object-fit: cover;
+            width: 4rem;
+            background-color: white;
+            border-radius: 50%;
+            border: solid 2px $bg-secondary;
+            margin-right: .5rem;
+        }
+
+        h2 {
+            color: white;
+            font-family: montserrat;
+        }
+
+        h3 {
+            color: darken(white, 30%);
+            font-style: italic;
+        }
     }
+
+    > p {
+        color: darken(white, 10%);
+
+        &:last-of-type {
+            color: darken(white, 30%);
+            font-style: italic;
+            margin-top: .5rem;
+            width: fit-content;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
 }
 
-.feed-card-content {
-    color: white;
-
-    > h2 {
-        text-transform: uppercase;
-        font-size: 2rem;
-        font-family: montserrat;
+@media(min-width: $breakpoint-desktop) {
+    .feed-card {
+        
+        width: fit-content;
+        border-radius: 20px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.4);
+        margin-bottom: 1.25rem;
+    
+        > img {
+            object-fit: cover;
+            width: 200px;
+            height: auto;
+            margin-right: 2rem;
+            background-color: $bg-secondary;
+            border-radius: 20px;
+            padding: .5rem;
+        }
     }
-
-    > h3 {
-        font-style: italic;
-        color: darken(white, 40%);
-        font-size: 1rem;
-        margin-bottom: .5rem;
+    
+    .feed-card-content {
+        color: white;
+    
+        > h2 {
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-family: montserrat;
+        }
+    
+        > h3 {
+            font-style: italic;
+            color: darken(white, 40%);
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
     }
 }

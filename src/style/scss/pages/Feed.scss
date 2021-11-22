@@ -2,14 +2,40 @@
 @use "../abstract/index" as *;
 
 .feed {
-    margin: 2rem;
-
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     > h1 {
-        font-size: 4rem;
+        margin: 1rem 0;
+        font-size: 2.5rem;
+        text-align: center;
+        justify-self:flex-start;
     }
+
 }
 
 .feed-items {
-    margin: 2rem;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
+@media (min-width: $breakpoint-desktop) {
+    .feed {
+        margin: 2rem;
+    
+        > h1 {
+            font-size: 4rem;
+        }
+    }
+    
+    .feed-items {
+        margin: 2rem;
+    
+    }
 }
