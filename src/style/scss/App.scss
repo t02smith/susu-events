@@ -30,5 +30,9 @@ b {
 }
 
 .app {
-    min-height: 100vh;
+    min-height: 100vh-$mob-header-height;
+}
+
+.page-content {
+    margin-top: $mob-header-height*1.05;
 }

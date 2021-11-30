@@ -7,8 +7,9 @@ const societies =
         socials: {
             facebook: "https://www.facebook.com/groups/ecss.soton",
             twitter: "https://www.twitter.com/@ecs_society",
-            webpage: "https://www.susu.org/groups/ecss"
-        }
+            susu: "https://www.susu.org/groups/ecss"
+        },
+        desc: "The official society for ECS"
     },
     {
         name: "AI",
@@ -17,7 +18,7 @@ const societies =
         socials: {
             facebook: "https://www.facebook.com/UniversityofSouthamptonAISociety/",
             twitter: "",
-            webpage: "https://www.susu.org/groups/artificial-intelligence-society"
+            susu: "https://www.susu.org/groups/artificial-intelligence-society"
         }
     },
     {
@@ -27,8 +28,9 @@ const societies =
         socials: {
             facebook: "https://www.facebook.com/SotonFilmSociety",
             twitter: "https://www.twitter.com/@sotonfilmsoc",
-            webpage: "https://www.susu.org/groups/film-society"
-        }
+            susu: "https://www.susu.org/groups/film-society"
+        },
+        desc: "The movie lover's society"
     }
     ]
 

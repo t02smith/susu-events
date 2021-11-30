@@ -23,7 +23,7 @@ function Profile({ open, close }) {
                 <div>
                     {
                         soc &&
-                        soc.map((s, i) => <SocietyCard key={i} logo={s.logo} id={s.id} onClick={() => close()}/>)
+                        soc.map((s, i) => <SocietyCard key={i} logo={s.logo} id={s.id} onClick={close}/>)
                     }
                 </div>
             </div>

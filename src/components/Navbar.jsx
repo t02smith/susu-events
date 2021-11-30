@@ -12,7 +12,7 @@ function Navbar({open, close}) {
         <nav className={`navbar ${open && "navbar-open"}`}>
 
             <Link to="/" onClick={close} className="mob-only">
-                <i className="fas fa-comments"></i>
+                <i className="fas fa-home"></i>
             </Link>
 
             <Link to="/societies" onClick={close}>
