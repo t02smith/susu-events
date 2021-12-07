@@ -9,7 +9,7 @@ function Login() {
 
     return (
         <div className="login">
-            <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" />
+            <img src={process.env.PUBLIC_URL + "/img/logo_2.png"} alt="" />
             <div>
                 <div className="login-info">
                     <h1><b>Welcome</b> to SUSU Events</h1>

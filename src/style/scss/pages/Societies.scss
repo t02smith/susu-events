@@ -2,5 +2,17 @@
 @use "../abstract/index" as *;
 
 .societies {
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    place-items: center;
+
+    > .create-soc {
+        @include btn(#232323, $bg-secondary);
+        text-decoration: none;
+        text-align: center;
+        grid-column: 1 / 3;
+        width: 85%;
+    }
 }

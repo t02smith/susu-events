@@ -3,10 +3,11 @@ import { Link } from "react-router-dom"
 
 import "../style/css/components/SocietyCard.css"
 
-function SocietyCard({ onClick, logo, id }) {
+function SocietyCard({ onClick, logo, id, desc, name }) {
     return (
         <Link to={`/societies/${id}`} className="soc-card" onClick={onClick}>
             <img alt="" src={logo} />
+
         </Link>
     )
 }

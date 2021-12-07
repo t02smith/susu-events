@@ -10,6 +10,7 @@ import Societies from './pages/Societies'
 import Society from './pages/Society'
 import MyFeed from './pages/MyFeed'
 import Event from "./pages/Event"
+import CreateSociety from './pages/CreateSociety'
 
 const societies = require("./data/societies").default
 const events = require("./data/events").default
@@ -36,6 +37,7 @@ function App() {
 
                         <Route path="/societies" element={<Societies />}/>
                         <Route path="/societies/:socId" element={<Society getSociety={getSociety}/>} />
+                        <Route path="/societies/create" element={<CreateSociety />} />
                     </Routes>
                 </Router>
             : 

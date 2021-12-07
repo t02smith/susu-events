@@ -1,8 +1,8 @@
 
 /*COLOURS*/
 $bg-primary: darken(#c9cbd1,5%);
-$bg-secondary: #f36a5f;
-$bg-ternary: #f36a5f;
+$bg-secondary: #00AA58;
+$bg-ternary: lighten($bg-secondary, 12%);
 
 $text-primary: black;
 
